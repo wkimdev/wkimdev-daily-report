@@ -40,6 +40,46 @@ public class Journal {
 		return format.format(created);
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+	public SimpleDateFormat getFormat() {
+		return format;
+	}
+
+	public void setFormat(SimpleDateFormat format) {
+		this.format = format;
+	}
+
 	public String toString() {
         StringBuilder value = new StringBuilder("JournalEntry(");
         value.append("Id: ");
