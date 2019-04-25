@@ -1,10 +1,14 @@
 package com.wkimdev.demo;
 
+import java.io.PrintStream;
+
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 
 import com.wkimdev.demo.domain.Journal;
 import com.wkimdev.demo.repository.JournalRepository;
@@ -33,7 +37,17 @@ public class MyDailyReport1Application {
 	    }
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyDailyReport1Application.class, args);
+//		SpringApplication.run(MyDailyReport1Application.class, args);
+		
+		//버전 2.
+        SpringApplication app = new SpringApplication(MyDailyReport1Application.class);
+        app.setBanner(new Banner() {
+			@Override
+			public void printBanner(Environment environment, Class<?> sourceClass, PrintStream out) {
+				out.print("\n\n\t위킴의 멋진 배너!\n\n".toUpperCase());
+			}
+        });
+        app.run(args);
 	}
 
 }
