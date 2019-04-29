@@ -28,18 +28,20 @@ public class Journal {
 	@Transient
 	private SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 	
-//	public Journal(String title, String summary, String date) throws ParseException{
-//		this.title = title;
-//		this.summary = summary;
-//		this.created = format.parse(date);
-//	}
+	// jpa 연결시 설정
+	public Journal(String title, String summary, String date) throws ParseException{
+		this.title = title;
+		this.summary = summary;
+		this.created = format.parse(date);
+	}
 	
-	public Journal(Long id, String title, String summary, Date date) {
-        this.id = id;
-        this.title = title;
-        this.summary = summary;
-        this.created = date;
-    }
+	// jdbc 연결시 설정
+//	public Journal(Long id, String title, String summary, Date date) {
+//        this.id = id;
+//        this.title = title;
+//        this.summary = summary;
+//        this.created = date;
+//    }
 	
 	Journal() {}
 	
