@@ -63,7 +63,7 @@ public class MyDailyReport1Application implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		// TODO Auto-generated method stub
 		log.info("@@ 데이터 생성....");
-        service.insertData();
+//        service.insertData();
         log.info("@@ findAll() 호출...");
         service.findAll().forEach(entry -> log.info(entry.toString()));
 	}
